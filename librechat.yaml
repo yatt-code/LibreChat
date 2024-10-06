@@ -39,15 +39,15 @@ interface:
 
       You agree to use the Website only for lawful purposes and in a manner that does not infringe the rights of, restrict, or inhibit anyone else's use and enjoyment of the Website. Prohibited behavior includes harassing or causing distress or inconvenience to any person, transmitting obscene or offensive content, or disrupting the normal flow of dialogue within the Website.
 
-      ## 6. Governing Law
+      ## 4. Governing Law
 
       These Terms shall be governed by and construed in accordance with the laws of the United States, without giving effect to any principles of conflicts of law.
 
-      ## 7. Changes to the Terms
+      ## 5. Changes to the Terms
 
       We reserve the right to modify these Terms at any time. We will notify users of any changes by email. Your continued use of the Website after such changes have been notified will constitute your consent to such changes.
 
-      ## 8. Contact Information
+      ## 6. Contact Information
 
       If you have any questions about these Terms, please contact us at work@yatt.codes.
 
@@ -88,22 +88,8 @@ registration:
 
 # Definition of custom endpoints
 endpoints:
-  # assistants:
-  #   disableBuilder: false # Disable Assistants Builder Interface by setting to `true`
-  #   pollIntervalMs: 3000  # Polling interval for checking assistant updates
-  #   timeoutMs: 180000  # Timeout for assistant operations
-  #   # Should only be one or the other, either `supportedIds` or `excludedIds`
-  #   supportedIds: ["asst_supportedAssistantId1", "asst_supportedAssistantId2"]
-  #   # excludedIds: ["asst_excludedAssistantId"]
-  #   Only show assistants that the user created or that were created externally (e.g. in Assistants playground).
-  #   # privateAssistants: false # Does not work with `supportedIds` or `excludedIds`
-  #   # (optional) Models that support retrieval, will default to latest known OpenAI models that support the feature
-  #   retrievalModels: ["gpt-4-turbo-preview"]
-  #   # (optional) Assistant Capabilities available to all users. Omit the ones you wish to exclude. Defaults to list below.
-  #   capabilities: ["code_interpreter", "retrieval", "actions", "tools", "image_vision"]
-  custom:
+   custom:
     
-
     # OpenRouter Example
     - name: 'OpenRouter'
       # For `apiKey` and `baseURL`, you can use environment variables that you define.
@@ -112,19 +98,14 @@ endpoints:
       apiKey: '${OPENROUTER_KEY}'
       baseURL: 'https://openrouter.ai/api/v1'
       models:
-        default: 
-        [
-          'meta-llama/llama-3.2-3b-instruct',
-          'gemini-1.5-flash-8b',
-          'o1-mini',
-          'ChatGPT-4o'
-        ]
+        default: ['meta-llama/llama-3-70b-instruct']
         fetch: true
       titleConvo: true
-      titleModel: 'meta-llama/llama-3.2-3b-instruct'
+      titleModel: 'meta-llama/llama-3-70b-instruct'
       # Recommended: Drop the stop parameter from the request as Openrouter models use a variety of stop tokens.
       dropParams: ['stop']
       modelDisplayLabel: 'OpenRouter'
+
 # fileConfig:
 #   endpoints:
 #     assistants:

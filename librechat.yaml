@@ -112,10 +112,16 @@ endpoints:
       apiKey: '${OPENROUTER_KEY}'
       baseURL: 'https://openrouter.ai/api/v1'
       models:
-        default: ['meta-llama/llama-3-70b-instruct']
+        default: 
+        [
+          'meta-llama/llama-3.2-3b-instruct',
+          'gemini-1.5-flash-8b',
+          'o1-mini',
+          'ChatGPT-4o'
+        ]
         fetch: true
       titleConvo: true
-      titleModel: 'meta-llama/llama-3-70b-instruct'
+      titleModel: 'meta-llama/llama-3.2-3b-instruct'
       # Recommended: Drop the stop parameter from the request as Openrouter models use a variety of stop tokens.
       dropParams: ['stop']
       modelDisplayLabel: 'OpenRouter'
